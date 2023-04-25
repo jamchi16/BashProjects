@@ -1,0 +1,52 @@
+#!/bin/bash
+
+# Gives a random starter pokemon for you to select
+
+echo "Here is your chance to begin your Pokemon Journey!"
+read -p "What is your name? " name
+
+#array of Pokemon
+Pokemon[0]="Charmander"
+Pokemon[1]="Bulbasaur"
+Pokemon[2]="Squirtle"
+Pokemon[3]="Cyndaquil"
+Pokemon[4]="Chikorita"
+Pokemon[5]="Totodile"
+Pokemon[6]="Torchic"
+Pokemon[7]="Treecko"
+Pokemon[8]="Mudkip"
+Pokemon[9]="Chimchar"
+Pokemon[10]="Turtwig"
+Pokemon[11]="Piplup"
+Pokemon[12]="Tepig"
+Pokemon[13]="Snivy"
+Pokemon[14]="Oshawott"
+Pokemon[15]="Fennekin"
+Pokemon[16]="Chespin"
+Pokemon[17]="Frogadier"
+Pokemon[18]="Litten"
+Pokemon[19]="Rowlet"
+Pokemon[20]="Popplio"
+Pokemon[21]="Scorbunny"
+Pokemon[22]="Grookey"
+Pokemon[23]="Sobble"
+Pokemon[24]="Fuecoco"
+Pokemon[25]="Sprigatito"
+Pokemon[26]="Quaxly"
+
+array_length=${#Pokemon[@]} # Store the length of the array
+index=$(($RANDOM % $array_length)) # Randomly select an index from 0 to array_length
+
+# Invite the user to select a Pokemon
+echo "Hi" $name, "would you like to select" ${Pokemon[$index]}" as your partner?"
+read -p "Answer (yes/no): " answer
+
+until [ $answer = yes ]
+do
+    array_length=${#Pokemon[@]} # Store the length of the array
+    index=$(($RANDOM % $array_length)) # Randomly select an index from 0 to array_length
+    echo "Maybe you would rather have" ${Pokemon[$index]} " as your partner?"
+    read -p "Answer (yes/no): " answer
+
+done
+     echo "Take good care of that Pokemon, I wish you the best on your Journey!"

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#alarmclock
+
+read -p "How long would you like this timer do go for? (HH:MM:SS) " wake
+
+hours=`echo $wake | awk -F: '{print $1}'`
+minutes=`echo $wake | awk -F: '{print $2}'`
+seconds=`echo $wake | awk -F: '{print $3}'`
+
+time=$((($hours*360)+($minutes*60)+$seconds))
+
+echo "The timer will go off in $hours hours, $minutes minutes, and $seconds seconds."
+
+sleep $time ; echo "The timer has finished"

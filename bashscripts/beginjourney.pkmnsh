@@ -2,9 +2,6 @@
 
 # Gives a random starter pokemon for you to select
 
-echo "Here is your chance to begin your Pokemon Journey!"
-read -p "What is your name? " name
-
 #array of Pokemon
 Pokemon[0]="Charmander"
 Pokemon[1]="Bulbasaur"
@@ -23,7 +20,7 @@ Pokemon[13]="Snivy"
 Pokemon[14]="Oshawott"
 Pokemon[15]="Fennekin"
 Pokemon[16]="Chespin"
-Pokemon[17]="Frogadier"
+Pokemon[17]="Froakie"
 Pokemon[18]="Litten"
 Pokemon[19]="Rowlet"
 Pokemon[20]="Popplio"
@@ -37,7 +34,12 @@ Pokemon[26]="Quaxly"
 array_length=${#Pokemon[@]} # Store the length of the array
 index=$(($RANDOM % $array_length)) # Randomly select an index from 0 to array_length
 
+echo "Hello there, I am Professor Sequoia and welcome to the world of Pokemon!" ${Pokemon[$index]} "is one of the many Pokemon you may encounter here and I will give you one to go with you on your journey!"
+read -p "Before we begin, might I ask, what is your name? " name
+
 # Invite the user to select a Pokemon
+array_length=${#Pokemon[@]} # Store the length of the array
+index=$(($RANDOM % $array_length)) # Randomly select an index from 0 to array_length
 echo "Hi" $name, "would you like to select" ${Pokemon[$index]}" as your partner?"
 read -p "Answer (yes/no): " answer
 
@@ -49,4 +51,5 @@ do
     read -p "Answer (yes/no): " answer
 
 done
-     echo "Take good care of that Pokemon, I wish you the best on your Journey!"
+     echo "Take good care of" ${Pokemon[$index]}", I wish you the best on your Journey!"
+

@@ -47,7 +47,7 @@ if [ $catch = y ]
                                 done
                                     echo "You have caught $Pokemon!"
                     elif [ $catch -gt 70 ]
-                        then shakes=2
+                        then shakes=`echo "$(( $RANDOM % 2 + 1 ))"`
                              until [ $shakes = 0 ]
                                 do 
                                     echo "shake"
@@ -76,7 +76,7 @@ if [ $catch = y ]
                                 done
                                     echo "You have caught $Pokemon!"
                     elif [ $catch -gt 50 ]
-                        then shakes=1
+                        then shakes=`echo "$(( $RANDOM % 2 + 1 ))"`
                              until [ $shakes = 0 ]
                                 do 
                                     echo "shake"
@@ -105,7 +105,13 @@ if [ $catch = y ]
                                 done
                                     echo "You have caught $Pokemon!"
                     elif [ $catch -gt 30 ]
-                        then  echo "$Pokemon immmediately popped out and scampered away!"
+                        then shakes=`echo "$(( $RANDOM % 2 + 1 ))"`
+                             until [ $shakes = 0 ]
+                                do 
+                                    echo "shake"
+                                    shakes=$((shakes-1))
+                                    sleep 1
+                                done echo "$Pokemon popped out and scampered away!"
                     fi
                 elif [ $throw = n ]
                     then echo "Eh, you didn't have much of a chance anyways."

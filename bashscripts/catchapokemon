@@ -2,7 +2,7 @@
 
 #Catcharandompokemon
 
-seed=$((RANDOM % 1010 + 1))
+seed=$((RANDOM % 1011 + 1))
 
 Pokemon=`awk -F ','  -v pkmn="$seed" '$1==pkmn {print $2}' /workspaces/Code/testfiles/pokemonlist`
 
@@ -47,7 +47,7 @@ if [ $catch = y ]
                                 done
                                     echo "You have caught $Pokemon!"
                     elif [ $catch -gt 70 ]
-                        then shakes=`echo "$(( $RANDOM % 2 + 1 ))"`
+                        then shakes=`echo "$(( $RANDOM % 3 + 1 ))"`
                              until [ $shakes = 0 ]
                                 do 
                                     echo "shake"
@@ -76,7 +76,7 @@ if [ $catch = y ]
                                 done
                                     echo "You have caught $Pokemon!"
                     elif [ $catch -gt 50 ]
-                        then shakes=`echo "$(( $RANDOM % 2 + 1 ))"`
+                        then shakes=`echo "$(( $RANDOM % 3 + 1 ))"`
                              until [ $shakes = 0 ]
                                 do 
                                     echo "shake"
@@ -105,13 +105,14 @@ if [ $catch = y ]
                                 done
                                     echo "You have caught $Pokemon!"
                     elif [ $catch -gt 30 ]
-                        then shakes=`echo "$(( $RANDOM % 2 + 1 ))"`
+                        then shakes=`echo "$(( $RANDOM % 3 + 1 ))"`
                              until [ $shakes = 0 ]
                                 do 
                                     echo "shake"
                                     shakes=$((shakes-1))
                                     sleep 1
-                                done echo "$Pokemon popped out and scampered away!"
+                                done 
+                                    echo "$Pokemon popped out and scampered away!"
                     fi
                 elif [ $throw = n ]
                     then echo "Eh, you didn't have much of a chance anyways."

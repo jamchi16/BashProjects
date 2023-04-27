@@ -1,0 +1,34 @@
+#!/bin/bash
+
+#2numbercalculator
+
+read -p "What operation would you like to use? Options are: Addition, Subtraction, Multiplication, or Division. " operation
+
+if [ $operation = Addition ]
+    then 
+    read -p "Please input the first number " number1
+    read -p "Please input the second number " number2
+    Result=$(($number1+$number2))
+    echo "The answer is $Result"
+fi
+if [ $operation = Subtraction ]
+    then 
+    read -p "Please input the first number " number1
+    read -p "Please input the second number " number2
+    Result=$(($number1-$number2))
+    echo "The answer is $Result"
+fi
+if [ $operation = Multiplication ]
+    then 
+    read -p "Please input the first number " number1
+    read -p "Please input the second number " number2
+    Result=$(($number1*$number2))
+    echo "The answer is $Result"
+fi
+if [ $operation = Division ]
+    then 
+    read -p "Please input the first number " number1
+    read -p "Please input the second number " number2
+    Result=$(($number1/$number2))
+    echo "The answer is $Result"
+fi
